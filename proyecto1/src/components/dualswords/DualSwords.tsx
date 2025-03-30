@@ -1,3 +1,4 @@
+import ChangeName from "../changename/ChangeName";
 //primero creo la interfaz
 interface DualSwords {
     name: string;
@@ -14,7 +15,7 @@ interface DualSwordsProps {
 //despues creo el componente que va a recibir la interfaz y los props
 const DualSwords = ({dual}: DualSwordsProps) => {
     return (
-        <div className='DualSwords-container'>
+        <div className='container'>
             <h3>{dual.name}</h3>
             <img
                 src={dual.image} alt={dual.name}
@@ -24,6 +25,9 @@ const DualSwords = ({dual}: DualSwordsProps) => {
             <p>Daño: {dual.damage}</p>
             <p>Defensa: {dual.defense}</p>
             <p>Agilidad: {dual.agility}</p>
+            <p>
+                <ChangeName />
+            </p>
         </div>
     )
 }

@@ -1,8 +1,17 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0; /* Elimina el padding para un mejor centrado */
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
   text-align: center;
+  background-image: url(https://images7.alphacoders.com/117/thumb-1920-1177322.jpg);
+  background-size: cover; /* La imagen cubrirá toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .card {
@@ -14,8 +23,117 @@
 }
 
 .LongSword-image{
-  width: 250px;
+  width: 350px;
 }
-.LongSword-container{
-  background-color: blue;
+.container {
+  position: inherit;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #84b6c62b;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Agrega un margen para separar los contenedores */
 }
+.container:hover {
+  background-color: #b4a3be3c;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(226, 211, 255, 0.723);
+}
+
+.textoPrincipal{
+  text-shadow: #0f0f0f;
+}
+
+.button-name {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.1s;
+}
+
+.button-name::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(255, 94, 94) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.button-name:active {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient(circle farthest-corner at 10% 20%, rgb(255, 94, 94) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+  transition: 0.5s;
+}
+
+.input-name {
+  position: relative;
+  width: 250px; /* Ajusta el ancho del input */
+  margin: 20px auto; /* Centra el input horizontalmente */
+}
+
+.input-name input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 16px;
+  color: #5f5f5f26;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.301); /* Borde inicial */
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-name input:focus {
+  border-color: #45f3ffd6; /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 8px #45f3ff; /* Agrega un brillo al enfocar */
+}
+
+.input-name span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-name input:focus ~ span,
+.input-name input:not(:placeholder-shown) ~ span {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #45f3ff; /* Cambia el color del texto flotante */
+}
+
+.input-name i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.input-name input:focus ~ i {
+  transform: scaleX(1); /* Expande la línea al enfocar */
+}
+
+

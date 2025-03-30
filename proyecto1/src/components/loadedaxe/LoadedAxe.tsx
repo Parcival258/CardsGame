@@ -1,3 +1,5 @@
+import ChangeName from "../changename/ChangeName";
+
 //primero creo la interfaz
 interface LoadedAxe {
     name: string;
@@ -14,7 +16,7 @@ interface LoadedAxeProps {
 //despues creo el componente que va a recibir la interfaz y los props
 const LoadedAxe = ({axe}: LoadedAxeProps) => {
     return (
-        <div className='LoadedAxe-container'>
+        <div className='container'>
             <h3>{axe.name}</h3>
             <img
                 src={axe.image} alt={axe.name}
@@ -24,7 +26,9 @@ const LoadedAxe = ({axe}: LoadedAxeProps) => {
             <p>Daño: {axe.damage}</p>
             <p>Defensa: {axe.defense}</p>
             <p>Agilidad: {axe.agility}</p>
-
+            <p>
+                <ChangeName />
+            </p>
         </div>
 
     )

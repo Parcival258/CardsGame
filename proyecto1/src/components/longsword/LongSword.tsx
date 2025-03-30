@@ -1,31 +1,35 @@
-import './LongSword.css'
+import ChangeName from "../changename/ChangeName";
 
 interface LongSword {
     name: string;
     imagen: string;
-    daño: number;
-    defensa: number;
-    agilidad: number;
+    damage: number;
+    defense: number;
+    agility: number;
 };
 
 interface LongSwordProps {
-    espada: LongSword;
+    sword: LongSword;
 }
 
-const LongSword = ({espada}: LongSwordProps) => {
+const LongSword = ({sword: sword}: LongSwordProps) => {
     return (
-        <div  className='LongSword-container'>
-            <h3>{espada.name}</h3>
+        <div  className='container'>
+            <h3>{sword.name}</h3>
             <img 
-                src={espada.imagen} 
-                alt={espada.name} 
+                src={sword.imagen} 
+                alt={sword.name} 
                 className="LongSword-image" 
                 
             />
-            <p>Daño: {espada.daño}</p>
-            <p>Defensa: {espada.defensa}</p>
-            <p>Agilidad: {espada.agilidad}</p>
+            <p>Daño: {sword.damage}</p>
+            <p>Defensa: {sword.defense}</p>
+            <p>Agilidad: {sword.agility}</p>
+            <p>
+                <ChangeName />
+            </p>
         </div>
+        
     );
 }
 
